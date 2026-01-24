@@ -13,5 +13,9 @@ I developed this project to combine astrophysics and programming.
 ## Tech Stack:
 Python 3.10, Astropy, NumPy, Matplotlib
 
+
+[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/) [![Astropy](https://img.shields.io/badge/Astropy-orange?style=for-the-badge)](https://www.astropy.org/)
+[![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/) [![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)](https://matplotlib.org/)
+
 ## Documentation and Others
 If interested, please check out the [in-depth code explanations](docs/TechnicalExplanations.md), as well as the [devlog](docs/DEVLOG.md).
