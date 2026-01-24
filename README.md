@@ -12,4 +12,4 @@ I developed this project to combine astrophysics and programming.
 Python 3.10, Astropy, NumPy, Matplotlib
 
 ## Documentation and Others
-If interested, please check out the [in-depth code explanations](TechnicalExplenations.md), as well as the [devlog](DEVLOG.md).
+If interested, please check out the [in-depth code explanations](docs/TechnicalExplenations.md), as well as the [devlog](docs/DEVLOG.md).
