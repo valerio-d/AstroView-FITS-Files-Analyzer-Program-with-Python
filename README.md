@@ -1,4 +1,6 @@
-<img width="492" height="485" alt="image" src="https://github.com/user-attachments/assets/8fa43eac-5cc3-45bb-a4e7-1e9a2d0ab15d" /> <img width="510" height="485" alt="image" src="https://github.com/user-attachments/assets/43bcde2d-f7a8-4ce5-aac7-31159aa5d318" />
+<p align="center">
+  <img width="455" height="444" alt="image" src="https://github.com/user-attachments/assets/8fa43eac-5cc3-45bb-a4e7-1e9a2d0ab15d" /> <img width="455" height="474" alt="image" src="https://github.com/user-attachments/assets/43bcde2d-f7a8-4ce5-aac7-31159aa5d318" />
+</p>
 
 [Example of AstroView, FITS File Visualizer with M82 and N13D, FITS file provided by https://chandra.harvard.edu/photo/openFITS/xray_data.html]
 
