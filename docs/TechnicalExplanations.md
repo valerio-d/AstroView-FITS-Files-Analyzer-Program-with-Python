@@ -1,5 +1,3 @@
-- A lightweight program that uses the Astropy, Numpy, and Matplotlib for FITS File Visualization and Analysis.  and astropysics
--
 - # Code Explainations
 - ## Importing
 	-
@@ -190,3 +188,4 @@
 				  ```
 				- produces a gallery of slices, showing each one after the other
 -
+
