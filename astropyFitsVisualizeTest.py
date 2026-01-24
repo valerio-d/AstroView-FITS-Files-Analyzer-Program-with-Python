@@ -3,7 +3,14 @@ import numpy as np #numpy uses arrays to represent images, spectral cubes, time 
 import matplotlib.pyplot as plt #Used to plot graphs
 
 # Open the FITS file and handle multi-dimensional data
-fits_file_path = r'etaCarinae.fits'  # Raw string for file path
+fits_file_path = r'n132d_0.3-0.5keV.fits'  # Raw string for file path
+# Brightness control (percentile ranges after log scaling)
+# Lower the low percentile and/or lower the high percentile to make an image look brighter. 
+BRIGHTNESS_PERCENTILES = { #adjust values to adapt to image ligthing
+    "option1": (30, 100),
+    "option2": (30, 85),
+    "option3": (1, 10),
+}
 #fits file credits: https://chandra.harvard.edu/photo/openFITS/xray_data.html
 
 try: #try-except block in case file is corropted or data files are missing
@@ -49,8 +56,9 @@ try: #try-except block in case file is corropted or data files are missing
             single_slice = np.clip(single_slice, 0, np.max(single_slice))
 
             #plotting
+            vmin1, vmax1 = np.percentile(single_slice, BRIGHTNESS_PERCENTILES["option1"])
             plt.figure(figsize=(8, 8))
-            plt.imshow(single_slice, cmap='gray', origin='lower') #display the image, gray color
+            plt.imshow(single_slice, cmap='gray', origin='lower', vmin=vmin1, vmax=vmax1) #display the image, gray color
             plt.colorbar() #add intensity sclae for scientific interpretation
             plt.title('FITS Image - Slice 0 (Log Scaled)') #labelling
             plt.xlabel('X Pixel')
@@ -64,8 +72,9 @@ try: #try-except block in case file is corropted or data files are missing
             combined_image = np.log10(combined_image - np.min(combined_image) + 1)
             combined_image = np.clip(combined_image, 0, np.max(combined_image))
 
+            vmin2, vmax2 = np.percentile(combined_image, BRIGHTNESS_PERCENTILES["option2"])
             plt.figure(figsize=(8, 8))
-            plt.imshow(combined_image, cmap='gray', origin='lower')
+            plt.imshow(combined_image, cmap='gray', origin='lower', vmin=vmin2, vmax=vmax2)
             plt.colorbar()
             plt.title('FITS Image - Mean Projection (Log Scaled)')
             plt.xlabel('X Pixel')
@@ -75,13 +84,17 @@ try: #try-except block in case file is corropted or data files are missing
             # Option 3: Visualize all slices
             num_slices = image_stack.shape[0]
             fig, axes = plt.subplots(1, num_slices, figsize=(5 * num_slices, 5)) #creates multiples sublots, one for each slice
+            # Ensure axes is always iterable (for single-slice case)
+            if num_slices == 1:
+                axes = [axes]
             for i in range(num_slices): #loop over the images
                 slice_image = image_stack[i, :, :]
 
                 slice_image = np.log10(slice_image - np.min(slice_image) + 1)
                 slice_image = np.clip(slice_image, 0, np.max(slice_image))
 
-                axes[i].imshow(slice_image, cmap='gray', origin='lower')
+                vmin3, vmax3 = np.percentile(slice_image, BRIGHTNESS_PERCENTILES["option3"])
+                axes[i].imshow(slice_image, cmap='gray', origin='lower', vmin=vmin3, vmax=vmax3)
                 axes[i].set_title(f'Slice {i}')
                 axes[i].axis('off')
             plt.show()
