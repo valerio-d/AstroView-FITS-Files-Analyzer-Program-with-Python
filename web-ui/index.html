@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AstroView</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				color: #e8f0ff;
+			}
+			#ui {
+				position: absolute;
+				inset: 0 auto auto 0;
+				padding: 16px 20px;
+				z-index: 1;
+				text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+			}
+			h1 {
+				margin: 0 0 6px 0;
+				font-size: 28px;
+			}
+			h2 {
+				margin: 0 0 10px 0;
+				font-size: 14px;
+				font-weight: 400;
+				letter-spacing: 0.5px;
+				text-transform: uppercase;
+			}
+			aside {
+				margin: 0;
+				font-size: 12px;
+				opacity: 0.8;
+			}
+		</style>
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@v0.183.0/build/three.webgpu.js",
+					"three/webgpu": "https://cdn.jsdelivr.net/npm/three@v0.183.0/build/three.webgpu.js",
+					"three/tsl": "https://cdn.jsdelivr.net/npm/three@v0.183.0/build/three.tsl.js",
+					"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.183.0/examples/jsm/"
+				}
+			}
+		</script>
+		<!--no UI Slider-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css"
+		/>
+	</head>
+	<body>
+		<div id="ui">
+			<h1>AstroView</h1>
+			<h2>FITS File Visualization Program</h2>
+
+			<p>
+				A lightweight Python program that uses Astropy, Numpy, and
+				Matplotlib for FITS Files Visualization and Analysis.
+			</p>
+
+			<div class="uploadFITS">
+				<form class="Upload File">
+					<input
+						type="file"
+						id="fitsFileInput"
+						accept=".fits, .fits,image/fits,application/fits"
+					/>
+				</form>
+
+				<div class="tweaks">
+					<div
+						id="image1-slider"
+						style="width: 400px; margin: 50px"
+					></div>
+					<div
+						id="image2-slider"
+						style="width: 400px; margin: 50px"
+					></div>
+					<div
+						id="image3-slider"
+						style="width: 400px; margin: 50px"
+					></div>
+				</div>
+			</div>
+
+			<aside>W robot bobby in da chat</aside>
+		</div>
+
+		<script type="module" src="stars.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+		<script src="script.js"></script>
+		<!--no uiSlider script-->
+	</body>
+</html>

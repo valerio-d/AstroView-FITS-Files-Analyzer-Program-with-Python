@@ -1,0 +1,30 @@
+/* The track background */
+.noUi-target {
+	background: #1a1a1a; /* Dark background like your image */
+	border: none;
+	height: 6px;
+}
+
+/* The purple bar between the handles */
+.noUi-connect {
+	background: #c24cf6; /* Your purple color */
+}
+
+/* The handles (dots) */
+.noUi-horizontal .noUi-handle {
+	width: 18px;
+	height: 18px;
+	right: -9px;
+	top: -6px;
+	border-radius: 50%;
+	background: #007bff; /* Bright blue handles */
+	border: 2px solid #fff;
+	box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Glow effect */
+	cursor: pointer;
+}
+
+/* Remove the default "lines" inside the handles */
+.noUi-handle::before,
+.noUi-handle::after {
+	display: none;
+}
